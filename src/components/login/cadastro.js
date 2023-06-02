@@ -3,10 +3,12 @@ import { useState,useEffect } from 'react';
 import { useReducer } from 'react';
 import axios from 'axios';
 import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 function Cadastro(){
     const [usersdata,setusersData]=useState()
+    const navigate = useNavigate()
     const[userdata,setuserData]=useState({
         nome: "",
         email: "",
@@ -128,7 +130,7 @@ function Cadastro(){
             <div className="content-controler-termos">
                 <div  className="termos-utilizacao">
                     <p className="termos">Ja possui conta?</p>
-                    <p className="termos-link" ><a href='/login'>Entrar</a></p>
+                    <p className="termos-link" ><a onClick={()=>navigate("/login")}>Entrar</a></p>
                 </div>
             </div>
             

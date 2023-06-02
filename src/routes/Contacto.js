@@ -2,7 +2,7 @@ import React from "react";
 
 const Contacto=()=>{
     return (
-        <p>hsbdacvasgvcgavcvacvacvvdgcgadvcgdv</p>
+        <p>contact page</p>
     )
 }
 export default Contacto

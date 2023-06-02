@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
+.card{
+    display: flex;
+    align-items:center;
+    justify-content:left;    
+    background-color: #6F9CEB ;
+    height: 100vh;
+    transition: 3s;
+    width: 100vw;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.main-container{
+    display: grid;
+    align-items: center;
+    padding:10px;
+    border-radius: 5px;
+    margin-left:25px;
+    justify-content: center;
+    width: 500px;
+    box-shadow:10px 5px 20px #141B41 ;
+    height: max-content;
+    background-color: white;
+}
+.input_controler{
+    width: 450px;
+    display: grid;
+    padding: 10px;
+    margin:4px;
+    align-items: center;
+    justify-content: center; 
+}
+.input_controler label{
+    font-family:"Staatliches", cursive;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    font-weight: 100;
+}
+.input_controler input{
+    width: 400px;
+    font-family:"Montserrat", sans-serif;
+    border-radius: 5px;
+    border-color: #306BAC;
+    height: 25px;
+}
+
+.input_controler button{
+    width: 400px;
+    height: 35px;
+    font-family:"Staatliches", cursive;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    font-weight: 100;
+    border:none;
+    background-color: #306BAC;
+    color:white;
+}
+.preview{
+   margin-left: 250px;
+    margin-right: 20px;
+}
+.preview img{
+    height: 50vh;
+}
+.preview p{
+    font-family:"Staatliches", cursive;
+}
+
+
+@media screen and (max-width:600px){
+    .main-container{
+        height: 100vh;
+        width: 100vw;
+        border-radius: 0px;
+        transition: 2s;
+        margin-left: 0px;
+    }
+    .input_controler{
+        width: 200px;
+    }
+    .preview{
+        display:none;
+    }
+    
+}

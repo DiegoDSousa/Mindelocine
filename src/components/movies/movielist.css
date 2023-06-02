@@ -4,5 +4,6 @@
     padding: 1%;
     height: 100%;
     align-items: center; 
+    overflow: hidden;
     justify-content: center;
 }

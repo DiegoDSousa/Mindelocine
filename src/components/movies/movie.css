@@ -12,6 +12,9 @@
     box-shadow: 20px 5px 15px rgba(0, 0, 0, 0.1);;
 
 }
+.cover{
+    height: 300px;
+}
 .holder{
     width: 400px;
     height: 100px;
@@ -54,6 +57,7 @@
     border-radius: 5px;
     transition: 1s ease-in-out;
 }
+
 .description-container{
     display: flex;
     margin: 2px;
@@ -61,16 +65,18 @@
 }
 .description-container .holder{
     height: 25px;
+    width: 150px;
     display: flex;
     align-items: flex-start; 
     justify-content: flex-start;
 }
 .holder p{
     margin: 10px;
-    font-size: 12px;
+    font-size: 8px;
     display: flex;
     align-items: center; 
     justify-content: center;
+    
 }
 
 
@@ -79,10 +85,12 @@
     display: flex;
     align-items: center; 
     justify-content: center;
+    width: 50%;
 }
-.cover-holder img{
-    height: 100px;
+.cover{
+    height: 100%;
 }
+
 .holder .conteudo{
     margin-left: 0px;
 }

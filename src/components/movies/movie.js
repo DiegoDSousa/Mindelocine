@@ -1,15 +1,21 @@
 import Capa from '../imagens/menina.jpeg'
+import React, { useState } from 'react';
 import './movie.css'
 
 
-import foto from "../../../../mindelocine-server/pictures/cover.png"
+
 const Movie=(props)=>{
+    const [selectedImage, setSelectedImage] = useState('http://localhost:8800/imagem/'+props.capa);
+
+    const handleImageChange = (event) => {
+      setSelectedImage();
+    };
+
     
-    console.log(props.capa)
     return(
         
     <div className='Movie-container'>
-        <div className='cover-holder'><img src={"../../../../mindelocine-server/pictures/"+props.capa} alt="foto de capa"></img></div>
+        <div className='cover-holder'><img src={selectedImage}  className='cover' alt="foto de capa"></img></div>
         <div className='description-container'>
             <div className='holder'>
                 <p>Titulo:</p>

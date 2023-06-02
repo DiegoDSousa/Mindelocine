@@ -1,5 +1,6 @@
 import "./cadastro.css"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import axios from "axios"
 
 function Login(){
@@ -8,6 +9,7 @@ function Login(){
         nome: "",
         password:"",
     })
+    const navigate = useNavigate()
     const handlechanger=(e)=>{
         setuserData((prev)=>({...prev,[e.target.name]:e.target.value}))
     }
@@ -43,6 +45,13 @@ function Login(){
                 </div>
                 <div className="content-controler">
                 <button type="submit" className='cadastrar-button'>Login</button>
+                <div className="content-controler-termos">
+                    
+                <div  className="termos-utilizacao">
+                    <p className="termos">Junte-se a familia: </p>
+                    <p className="termos-link" ><a onClick={()=>navigate("/cadastro")}>Cadastrar</a></p>
+                </div>
+            </div>
             </div>
             </form>
         </div>

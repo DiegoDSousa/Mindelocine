@@ -11,7 +11,7 @@
     overflow: none;
     align-items: center;
     padding: 2px;
-    overflow: hidden;
+    
 }
 
 .titulo{
@@ -89,6 +89,7 @@
 
 }
 .termos-utilizacao {
+    margin-top:4px;
     display: flex;
 }
 .termos,.termos-link
