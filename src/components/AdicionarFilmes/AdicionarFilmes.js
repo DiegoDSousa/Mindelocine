@@ -103,7 +103,7 @@ const AdicionarFilmes=()=>{
         </form>
 
         <div className="main-container preview">
-            <img src={Capa} alt="Preview da capa"/>
+            <img id="preview"src={Capa} alt="Preview da capa"/>
             <p id="Titulo_filme">{moviedata.TITULO}</p>
             <p id="Descricao_filme">{moviedata.DESCRICAO}</p>
             <p id="Preco_filme">{moviedata.PRECO}</p>

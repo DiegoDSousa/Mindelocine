@@ -1,4 +1,4 @@
-import Capa from '../imagens/menina.jpeg'
+
 import React, { useState } from 'react';
 import './movie.css'
 

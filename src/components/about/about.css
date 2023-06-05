@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Montserrat&display=swap');
+body{
+    background-color: #6F9CEB ;
+}
+.AboutPage{
+    transition: 2s;
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main_card{
+    padding: 20px;
+    box-shadow:10px 5px 20px #141B41 ;
+    height: 400px;
+    z-index: -1;
+    width: 500px;
+    background-color: white;
+    border-radius: 20px;
+    margin: 50px;
+   
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Staatliches", cursive;
+    color: #306BAC;
+    letter-spacing: 0.1em;
+    font-size: 50px;
+    margin: 10px;
+}
+.Informations{
+    font-family:"Montserrat", sans-serif;
+    display:block;
+    justify-content: center;
+    align-items:center;
+    font-weight: 50;
+    font-size: 20px;
+    margin: 5px;
+}
+.Informations p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.nome{
+    color: #306BAC;
+    font-weight: 400;
+}
+@media screen and (max-width:600px){
+    .AboutPage{
+        height: 100vh;
+        position: fixed;
+        z-index: -1;
+        width: 100vw;
+        overflow:scroll;
+        display: block;
+        align-items: center;
+        justify-content: center;
+        transition: 1s;
+    }
+    .main_card{
+        padding: 20px;
+        box-shadow:10px 5px 20px #141B41 ;
+        height: 200px;
+        z-index: -1;
+        width: 400px;
+        background-color: white;
+        border-radius: 20px;
+        margin: 50px;
+        transition: 1s;
+       
+    }
+    .Informations p{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        transition: 1s;
+    }
+}

@@ -1,8 +1,9 @@
 import React from "react";
+import AboutPage from "../components/about/about";
 
 const About=()=>{
     return (
-        <p>about page</p>
+        <AboutPage></AboutPage>
     )
 }
 export default About

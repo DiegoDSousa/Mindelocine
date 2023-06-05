@@ -1,6 +1,6 @@
 
 import './App.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createBrowserRouter,RouterProvider } from 'react-router-dom';
 import Cadastro from './components/login/cadastro';
 
@@ -11,16 +11,14 @@ import About from './routes/About';
 import Contacto from './routes/Contacto';
 import Login from './components/login/login';
 import Adicionar from './routes/Adicionar';
+import Perfil from './routes/Perfil';
 
 function App() {
-
-  
-  
+ 
   const[ filmes, setFilmes]=useState([])
   const[ verificar, setverificar]=useState(true)
   const[login,setLogin]=useState(true)
   const loginControler=()=>{setLogin(!login)}
-  
   
   
   const rotas=createBrowserRouter([{
@@ -34,10 +32,11 @@ function App() {
     { path: '/login', element: <Login/> },
     { path: '/cadastro', element: <Cadastro/> },
     { path: '/adicionar', element: <Adicionar/> },
+    { path: '/perfil', element: <Perfil/> },
   ],
   }])
 
-  console.log(filmes)
+  
   return (
     <div className='main'>
        <RouterProvider router={rotas} />

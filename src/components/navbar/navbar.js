@@ -16,7 +16,7 @@ function Navbar(props){
                         <li><a onClick={()=>navigate("/about")}>About</a></li>
                         <li><a onClick={()=>navigate("/contact")}>Contact</a></li>
                         <li><a onClick={()=>navigate("/adicionar")}>Adicionar</a></li>
-                        <li><a  onClick={()=>navigate("/cadastro")}>{props.login?"Cadastrar":"Perfil"}</a></li>
+                        <li><a onClick={()=>navigate(props.login?"/perfil":"/login")}>{props.login?"Perfil":"LogIn"}</a></li>
                     </ul>
                     <div id="mobile" onClick={clickControler}>
                             <i className={clicked?"fas fa-times":"fas fa-bars"}></i>

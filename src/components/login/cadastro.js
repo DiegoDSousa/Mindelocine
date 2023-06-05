@@ -4,6 +4,8 @@ import { useReducer } from 'react';
 import axios from 'axios';
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { SHA256 } from 'crypto-js';
+
 
 
 function Cadastro(){
@@ -13,9 +15,10 @@ function Cadastro(){
         nome: "",
         email: "",
         password:"",
+        admin_status:false,
     })
-    const [passwordconf,controlPasswordconf]=useState("")
 
+    const [passwordconf,controlPasswordconf]=useState("")
     const [validateUserName,setvalidateUserName]=useState(true)
     const [validateUserEmail,setvalidateUserEmail]=useState(true)
     const [validateUserPassword,setvalidateUserPassword]=useState(true)
@@ -23,13 +26,13 @@ function Cadastro(){
 
     const submithandler=async event=>{
         event.preventDefault()
-        let verefied_email
-        let verified_name
-        //falta verificacoes
+
 
         if(userdata.nome.length!=0 && userdata.email.length!=0 && userdata.password.length!=0 && passwordconf.length!=0){
             if(validateEmail && validateName && validatePassword && validatePasswordConf){
                 try{
+                    const hasedpassword=SHA256(userdata.password).toString() 
+                    userdata.password=hasedpassword
                     console.log((await axios.post("http://localhost:8800/cadastro",userdata)).data.message)
                 }catch(erro){
                     console.log(erro)
@@ -80,13 +83,12 @@ function Cadastro(){
 
     const handlechanger=(e)=>{
         setuserData((prev)=>({...prev,[e.target.name]:e.target.value}))
+        
     }
 
     
-
     const passwordconfHandler=(event)=>{
         controlPasswordconf(event.target.value)
-        
     }
 
 
@@ -97,22 +99,22 @@ function Cadastro(){
             <div className='titulo'><h2>Cadastrar</h2></div>
             <div className="content-controler">
                 <label className="content-description"><p>Nome Utilizador</p></label>
-                <input type="text" className="input-controler " onBlur={validateName} autocomplete="off"  maxlength="20"name="nome" onChange={handlechanger}></input>
+                <input type="text" className="input-controler " onBlur={validateName} autoComplete="off"  maxLength="20"name="nome" onChange={handlechanger}></input>
                 <p className={validateUserName?"valido":"invalido"}>Nome de utilizador ja existe</p>
             </div>
             <div className="content-controler">
                 <label className="content-description"><p>Email</p></label>
-                <input type="mail" className="input-controler" onBlur={validateEmail} autocomplete="off" maxlength="40"name="email" onChange={handlechanger}></input>
+                <input type="mail" className="input-controler" onBlur={validateEmail} autoComplete="off" maxLength="40"name="email" onChange={handlechanger}></input>
                 <p className={validateUserEmail?"valido":"invalido"}>Email invalido</p>
             </div>
             <div className="content-controler">
                 <label className="content-description"><p>Password</p></label>
-                <input type="password" onBlur={validatePassword} className="input-controler" autocomplete="off" name="password" onChange={handlechanger}></input>
+                <input type="password" onBlur={validatePassword} className="input-controler" autoComplete="off" name="password" onChange={handlechanger}></input>
                 <p className={validateUserPassword?"valido":"invalido"}>Password invalida</p>
             </div>
             <div className="content-controler">
                 <label className="content-description"><p>Confirmar Password</p></label>
-                <input type="password"  onBlur={validatePasswordConf} className="input-controler"  autocomplete="off" onChange={passwordconfHandler}></input>
+                <input type="password"  onBlur={validatePasswordConf} className="input-controler"  autoComplete="off" onChange={passwordconfHandler}></input>
                 <p className={validateUserPasswordConf?"valido":"invalido"}>Password Diferente</p>
             </div>
             <div className="content-controler-termos">
@@ -133,9 +135,6 @@ function Cadastro(){
                     <p className="termos-link" ><a onClick={()=>navigate("/login")}>Entrar</a></p>
                 </div>
             </div>
-            
-            
-            
 
         </form>
         </div>
