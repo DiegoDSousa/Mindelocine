@@ -21,7 +21,6 @@ const Principal=()=>{
 
         }else{setItem(false)}
         
-        
 
       },[])
 
