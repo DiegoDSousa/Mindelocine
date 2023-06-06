@@ -1,13 +1,9 @@
 import React from "react";
-import { useEffect,useState } from "react";
-
-import Capa from '../imagens/menina.jpeg'
+import { useState } from "react";
 import axios from "axios";
 import './adicionar.css'
 
 const AdicionarFilmes=()=>{
-    const [preview,setpreview]=useState('')
-
     const[moviedata,setmovieData]=useState({
         TITULO: "",
         COVER: "",
@@ -104,7 +100,7 @@ const AdicionarFilmes=()=>{
         </form>
 
         <div className="main-container preview">
-            {moviedata.image ?<img src={URL.createObjectURL(moviedata.image)}></img>:<p>Preview</p>}
+            {moviedata.image ?<img src={URL.createObjectURL(moviedata.image)} alt="movie_cover"></img>:<p>Preview</p>}
             <p id="Titulo_filme">{moviedata.TITULO}</p>
             <p id="Descricao_filme">{moviedata.DESCRICAO}</p>
             <p id="Preco_filme">{moviedata.PRECO}</p>

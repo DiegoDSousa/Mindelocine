@@ -1,15 +1,13 @@
 import './cadastro.css';
-import { useState,useEffect } from 'react';
-import { useReducer } from 'react';
+import { useState} from 'react';
 import axios from 'axios';
-import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { SHA256 } from 'crypto-js';
 
 
 
 function Cadastro(){
-    const [usersdata,setusersData]=useState()
+   
     const navigate = useNavigate()
     const[userdata,setuserData]=useState({
         nome: "",
@@ -28,7 +26,7 @@ function Cadastro(){
         event.preventDefault()
 
 
-        if(userdata.nome.length!=0 && userdata.email.length!=0 && userdata.password.length!=0 && passwordconf.length!=0){
+        if(userdata.nome.length!==0 && userdata.email.length!==0 && userdata.password.length!==0 && passwordconf.length!==0){
             if(validateEmail && validateName && validatePassword && validatePasswordConf){
                 try{
                     const hasedpassword=SHA256(userdata.password).toString() 
@@ -74,7 +72,7 @@ function Cadastro(){
         }
     }
     const validatePasswordConf=()=>{
-        if(passwordconf==userdata.password){
+        if(passwordconf===userdata.password){
             setvalidateUserPasswordConf(true)
         }else{
             setvalidateUserPasswordConf(false)
@@ -132,7 +130,7 @@ function Cadastro(){
             <div className="content-controler-termos">
                 <div  className="termos-utilizacao">
                     <p className="termos">Ja possui conta?</p>
-                    <p className="termos-link" ><a onClick={()=>navigate("/login")}>Entrar</a></p>
+                    <p className="termos-link" ><div onClick={()=>navigate("/login")}>Entrar</div></p>
                 </div>
             </div>
 

@@ -6,11 +6,6 @@ import './movie.css'
 
 const Movie=(props)=>{
     const [selectedImage, setSelectedImage] = useState('http://localhost:8800/imagem/'+props.capa);
-
-    const handleImageChange = (event) => {
-      setSelectedImage();
-    };
-
     
     return(
         

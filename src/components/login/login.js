@@ -11,7 +11,7 @@ import { SHA256 } from 'crypto-js';
 function Login(){
 
     const[userToken,setUserToken]=useState()
-    const[loginData,setloginData]=useState()
+
     const[userdata,setuserData]=useState({
         nome: "",
         password:"",
@@ -26,23 +26,21 @@ function Login(){
         const data_atual=moment().format('DD/MM/YYYY')
         event.preventDefault()
         let informations
-        let verified_name
         //falta verificacoes
         try{
             userdata.password=SHA256(userdata.password).toString()
             informations=(await axios.post("http://localhost:8800/login_verefier",userdata)).data
             setUserToken(informations[0].ID_USUARIO+"_"+userdata.nome+"_"+data_atual+"_"+informations[0].ADMIN_STATUS)
-            console.log(informations)
+            
         }catch(erro){
             console.log(erro)
         }
-        if( userdata.password == informations[0].PASSCODE){
+        if( userdata.password === informations[0].PASSCODE){
             console.log("log in realizado com sucesso")
             console.log(userToken)
             
             localStorage.setItem('UserToken', userToken);
             console.log(localStorage)
-            //window.location.href = '/';
         }else{console.log("Password incorreta")}
         }
 
@@ -65,7 +63,7 @@ function Login(){
                     
                 <div  className="termos-utilizacao">
                     <p className="termos">Junte-se a familia: </p>
-                    <p className="termos-link" ><a onClick={()=>navigate("/cadastro")}>Cadastrar</a></p>
+                    <p className="termos-link" ><div onClick={()=>navigate("/cadastro")}>Cadastrar</div></p>
                 </div>
             </div>
             </div>
