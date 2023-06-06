@@ -29,7 +29,7 @@ nav{
     position: relative;
 }
 
-#navbar-controler li a{
+#navbar-controler li .a,.a{
     text-decoration: none;
     font-size: 1.3rem;
     font-weight: 600;
@@ -37,10 +37,10 @@ nav{
     color:#fff;
     transition:0.3s ease-in-out;
 }
-#navbar-controler li a:hover{
+#navbar-controler li .a:hover{
     color: #98B9F2;
 }
-#navbar-controler li a:hover::after{
+#navbar-controler li .a:hover::after{
     content: "";
     width: 30%;
     height: 2px;
