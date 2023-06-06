@@ -10,7 +10,7 @@ const Error=()=>{
             <h1 className="error_type">404</h1>
             <p className="error_message">Ops</p>
             <p className="error_description">Não foi possivel localizar a pagina solicitada</p>
-            <p className="error_solution">Voltar para <a clasName="return" onClick={()=>navigate("/")}>Home</a></p>
+            <p className="error_solution">Voltar para <p clasName="return" onClick={()=>navigate("/")}>Home</p></p>
             
         </div>
         </div>

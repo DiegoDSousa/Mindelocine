@@ -15,7 +15,7 @@ const Principal=()=>{
         if (token !=null){
             const array=token.split("_")
             setItem(true)
-            if(array[array.length - 1]==1){
+            if(array[array.length - 1]===1){
                 setItemAdm(true)
             }else{setItemAdm(false)}
 
@@ -23,7 +23,7 @@ const Principal=()=>{
         
         
 
-      },)
+      },[])
 
     return (
         <>
