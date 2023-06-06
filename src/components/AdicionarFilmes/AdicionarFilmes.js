@@ -6,6 +6,7 @@ import axios from "axios";
 import './adicionar.css'
 
 const AdicionarFilmes=()=>{
+    const [preview,setpreview]=useState('')
 
     const[moviedata,setmovieData]=useState({
         TITULO: "",
@@ -103,7 +104,7 @@ const AdicionarFilmes=()=>{
         </form>
 
         <div className="main-container preview">
-            <img id="preview"src={Capa} alt="Preview da capa"/>
+            {moviedata.image ?<img src={URL.createObjectURL(moviedata.image)}></img>:<p>Preview</p>}
             <p id="Titulo_filme">{moviedata.TITULO}</p>
             <p id="Descricao_filme">{moviedata.DESCRICAO}</p>
             <p id="Preco_filme">{moviedata.PRECO}</p>

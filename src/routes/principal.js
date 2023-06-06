@@ -5,21 +5,29 @@ import { Outlet } from "react-router-dom";
 
 const Principal=()=>{
     const[logedIn,setItem]=useState()
-
+    const[logedInAdm,setItemAdm]=useState(false)
+    
     useEffect(()=>{
         const token=localStorage.getItem('UserToken')
-        //console.log(JSON.stringify(localStorage.getItem('id')))
         console.log(token)
+
         console.log(localStorage)
         if (token !=null){
+            const array=token.split("_")
             setItem(true)
-        }
-        console.log(logedIn)
+            if(array[array.length - 1]==1){
+                setItemAdm(true)
+            }else{setItemAdm(false)}
+
+        }else{setItem(false)}
+        
+        
+
       },)
 
     return (
         <>
-        <Navbar login={logedIn}></Navbar>
+        <Navbar login={logedIn} adm={logedInAdm}></Navbar>
         <main>
             <Outlet></Outlet>
         </main>

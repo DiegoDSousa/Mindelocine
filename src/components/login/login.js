@@ -1,9 +1,11 @@
 import "./cadastro.css"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+
 import axios from "axios"
 import moment from 'moment'
 import { SHA256 } from 'crypto-js';
+
 //import jwt from 'jsonwebtoken';
 
 function Login(){
@@ -37,9 +39,10 @@ function Login(){
         if( userdata.password == informations[0].PASSCODE){
             console.log("log in realizado com sucesso")
             console.log(userToken)
-            localStorage.clear()
-            localStorage.setItem('UserToken', userToken);
             
+            localStorage.setItem('UserToken', userToken);
+            console.log(localStorage)
+            //window.location.href = '/';
         }else{console.log("Password incorreta")}
         }
 

@@ -15,7 +15,7 @@ function Navbar(props){
                         <li><a onClick={()=>navigate("/")}>Home</a></li>
                         <li><a onClick={()=>navigate("/about")}>About</a></li>
                         <li><a onClick={()=>navigate("/contact")}>Contact</a></li>
-                        <li><a onClick={()=>navigate("/adicionar")}>Adicionar</a></li>
+                        <li><a onClick={()=>navigate(props.adm?"/adicionar":"")}>{props.adm?"Adicionar":""}</a></li>
                         <li><a onClick={()=>navigate(props.login?"/perfil":"/login")}>{props.login?"Perfil":"LogIn"}</a></li>
                     </ul>
                     <div id="mobile" onClick={clickControler}>

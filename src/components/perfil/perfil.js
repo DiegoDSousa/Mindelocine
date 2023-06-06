@@ -1,7 +1,11 @@
 const PerfilPage=()=>{
+    const logOf=()=>{
+        localStorage.clear()
+    }
     return(
-        <div>heiheihei</div>
-        
+        <div>
+            <p><a href="/" onClick={logOf}>log off</a></p>
+        </div>
 
     )
 }

@@ -6,25 +6,6 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-/*
-import{createBrowserRouter,RouterProvider} from "react-router-dom"
-
-import Contacto from './router/contacto'
-import Cadastrar from './routes/cadastrar';
-
-const router =createBrowserRouter([
-  {
-    path:"/cadastrar",
-    element:<Cadastrar/>
-  },
-  {
-    path:"/contacto",
-    element:<Contacto/>
-  }
-])
-
-*/
-
 root.render(
   <React.StrictMode>
     <App />
