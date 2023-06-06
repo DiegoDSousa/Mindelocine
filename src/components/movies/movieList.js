@@ -9,7 +9,7 @@ const MovieList=(props)=>{
     useEffect(()=>{
         const fetchAllMovies = async()=>{
             try{
-                const res= await axios.get("http://localhost:8800/movies")
+                const res= await axios.get("https://api-mindelcine.vercel.app/movies")
                 console.log(res.data)
                 setMovies(res.data)
                 //console.log(Movies)

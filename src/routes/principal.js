@@ -4,7 +4,7 @@ import { useEffect,useState } from "react";
 import { Outlet } from "react-router-dom";
 
 const Principal=()=>{
-    const[logedIn,setItem]=useState()
+    const[logedIn,setItem]=useState(false)
     const[logedInAdm,setItemAdm]=useState(false)
     
     useEffect(()=>{
