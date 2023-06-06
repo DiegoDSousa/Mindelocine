@@ -29,7 +29,7 @@ function Login(){
         //falta verificacoes
         try{
             userdata.password=SHA256(userdata.password).toString()
-            informations=(await axios.post("http://localhost:8800/login_verefier",userdata)).data
+            informations=(await axios.post("https://08d0-197-255-136-12.ngrok-free.app/login_verefier",userdata)).data
             setUserToken(informations[0].ID_USUARIO+"_"+userdata.nome+"_"+data_atual+"_"+informations[0].ADMIN_STATUS)
             
         }catch(erro){

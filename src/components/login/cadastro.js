@@ -31,7 +31,7 @@ function Cadastro(){
                 try{
                     const hasedpassword=SHA256(userdata.password).toString() 
                     userdata.password=hasedpassword
-                    console.log((await axios.post("http://localhost:8800/cadastro",userdata)).data.message)
+                    console.log((await axios.post("https://08d0-197-255-136-12.ngrok-free.app/cadastro",userdata)).data.message)
                 }catch(erro){
                     console.log(erro)
                 }}}}
@@ -41,7 +41,7 @@ function Cadastro(){
         let verified_name
         const send={"nome":userdata.nome}
         try{
-            verified_name = await axios.post("http://localhost:8800/cadastro_verificicar_nome",{send})
+            verified_name = await axios.post("https://08d0-197-255-136-12.ngrok-free.app/cadastro_verificicar_nome",{send})
             console.log(verified_name.data[0])
             
         }catch(err){console.log(err)}
@@ -55,7 +55,7 @@ function Cadastro(){
         let verified_email
         const send={"email":userdata.email}
         try{
-            verified_email = await axios.post("http://localhost:8800/cadastro_verificicar_email",{send})
+            verified_email = await axios.post("https://08d0-197-255-136-12.ngrok-free.app/cadastro_verificicar_email",{send})
             
         }catch(err){console.log(err)}
         if(verified_email.data[0]===undefined){
