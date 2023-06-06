@@ -6,11 +6,14 @@ import './movie.css'
 
 const Movie=(props)=>{
     const [selectedImage, setSelectedImage] = useState('http://localhost:8800/imagem/'+props.capa);
+    const handleImageChange = (event) => {
+      setSelectedImage();
+    };
     
     return(
         
     <div className='Movie-container'>
-        <div className='cover-holder'><img src={selectedImage}  className='cover' alt="foto de capa"></img></div>
+        <div className='cover-holder'><img src={selectedImage} onChange={handleImageChange} className='cover' alt="foto de capa"></img></div>
         <div className='description-container'>
             <div className='holder'>
                 <p>Titulo:</p>
