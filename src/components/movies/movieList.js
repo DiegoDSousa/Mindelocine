@@ -4,15 +4,17 @@ import {useState,useEffect} from 'react'
 import './movielist.css'
 import axios from 'axios'
 
+
+
 const MovieList=(props)=>{
     const [Movies,setMovies]=useState([])
     useEffect(()=>{
         const fetchAllMovies = async()=>{
             try{
-                const res= await axios.get("https://08d0-197-255-136-12.ngrok-free.app/movies")
+                const res= await axios.get("https://7732-197-255-136-12.eu.ngrok.io/movies")
+                console.log(res)
                 console.log(res.data)
                 setMovies(res.data)
-                //console.log(Movies)
             }catch(err){}
         }
         fetchAllMovies()

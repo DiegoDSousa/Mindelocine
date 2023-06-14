@@ -55,7 +55,7 @@ function Cadastro(){
         let verified_email
         const send={"email":userdata.email}
         try{
-            verified_email = await axios.post("https://08d0-197-255-136-12.ngrok-free.app/cadastro_verificicar_email",{send})
+            verified_email = await axios.post("https://7732-197-255-136-12.eu.ngrok.io/cadastro_verificicar_email",{send})
             
         }catch(err){console.log(err)}
         if(verified_email.data[0]===undefined){
