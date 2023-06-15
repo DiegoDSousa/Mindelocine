@@ -1,0 +1,85 @@
+.contact_card{
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    width: 500px;
+    height:450px;
+}
+.contact_form{
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+.contact_controler{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    orientation:portrait;
+    padding: 10px;
+    margin:4px;
+}
+
+.input_name-contacto{
+	display: grid;
+	font-family: "Staatliches", cursive;
+	color: black;
+	font-size: 15px;
+    margin: 2px;
+	letter-spacing: 0.1em;
+}
+
+.input-controler-contacto{
+    height: 30px;
+    margin-top: 5px;
+    width: 300px;
+    padding: 4px 4px 6px;
+    overflow: none;
+    font-family:"Montserrat", sans-serif;
+    margin-left: 6;
+    border-width: thin;
+    border-radius: 4px;
+}
+.input-controler-conteudo{
+    height: 100px;
+    margin-top: 5px;
+    padding: 4px 4px 6px;
+    width: 300px;
+    overflow: none;
+    font-family:"Montserrat", sans-serif;
+    resize:none;
+    margin-left: 6;
+    border-width: thin;
+    border-radius: 4px;
+}
+.input-controler-contacto:focus{
+    background-color: #d5e4fd;
+}
+
+
+.contact-button{
+    height: 30px;
+    width: 250px;
+    border-radius: 5px;
+    border:none;
+    background-color: #306BAC;
+    color:white;
+    font-family: "Staatliches", cursive;
+    letter-spacing: 0.2em;
+}
+
+.contact-button:hover{
+    cursor: pointer;
+}
+.contact_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #306BAC;
+    font-family:"Staatliches", cursive;
+    font-size: 25px;
+    letter-spacing: 0.05em;
+    font-weight: 100;
+}

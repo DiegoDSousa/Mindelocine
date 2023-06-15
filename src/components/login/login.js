@@ -9,7 +9,7 @@ import { SHA256 } from 'crypto-js';
 //import jwt from 'jsonwebtoken';
 
 function Login(){
-
+    const base_url="https://7fc3-197-255-136-12.eu.ngrok.io"
     const[userToken,setUserToken]=useState()
 
     const[userdata,setuserData]=useState({
@@ -29,7 +29,7 @@ function Login(){
         //falta verificacoes
         try{
             userdata.password=SHA256(userdata.password).toString()
-            informations=(await axios.post("https://7732-197-255-136-12.eu.ngrok.io/login_verefier",userdata)).data
+            informations=(await axios.post(base_url+"/login_verefier",userdata)).data
             setUserToken(informations[0].ID_USUARIO+"_"+userdata.nome+"_"+data_atual+"_"+informations[0].ADMIN_STATUS)
             
         }catch(erro){

@@ -5,7 +5,8 @@ import './movie.css'
 
 
 const Movie=(props)=>{
-    const [selectedImage, setSelectedImage] = useState('https://7732-197-255-136-12.eu.ngrok.io/imagem/'+props.capa);
+    const base_url="https://7fc3-197-255-136-12.eu.ngrok.io"
+    const [selectedImage, setSelectedImage] = useState(base_url+'/imagem/'+props.capa);
     const handleImageChange = (event) => {
       setSelectedImage();
     };

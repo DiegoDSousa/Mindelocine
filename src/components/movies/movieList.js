@@ -8,10 +8,11 @@ import axios from 'axios'
 
 const MovieList=(props)=>{
     const [Movies,setMovies]=useState([])
+    const base_url="https://7fc3-197-255-136-12.eu.ngrok.io"
     useEffect(()=>{
         const fetchAllMovies = async()=>{
             try{
-                const res= await axios.get("https://7732-197-255-136-12.eu.ngrok.io/movies")
+                const res= await axios.get(base_url+"/movies")
                 console.log(res)
                 console.log(res.data)
                 setMovies(res.data)

@@ -1,8 +1,8 @@
 import React from "react";
-
+import Contact_page from "../components/contacto/contacto";
 const Contacto=()=>{
     return (
-        <p>contact page</p>
+        <Contact_page></Contact_page>
     )
 }
 export default Contacto
